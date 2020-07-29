@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
     <string name="convertText">Convert</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="value">Value</string>
+    <string name="enter_value">Enter value</string>
+    <string name="results">Results</string>
+
+
 </resources>
