@@ -6,6 +6,8 @@
     <string name="value">Value</string>
     <string name="enter_value">Enter value</string>
     <string name="results">Results</string>
+    <string name="empty_warning">Please make sure to insert a valid value!</string>
+    <string name="same_currency_warning">Please make sure you\'re converting to a different currency!</string>
 
 
 </resources>
