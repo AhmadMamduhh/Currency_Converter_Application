@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CurrencyConverter</string>
+    <string name="app_name">Currency Converter</string>
     <string name="convertText">Convert</string>
     <string name="from">From</string>
     <string name="to">To</string>
