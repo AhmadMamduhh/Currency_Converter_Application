@@ -1,6 +1,7 @@
 package com.ahmedmamdouh.currencyconverter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -58,8 +59,17 @@ class MainActivity : AppCompatActivity() {
     private fun numToCurrencyFormat(convertedValue: Double): String {
         val numFormat: NumberFormat = NumberFormat.getCurrencyInstance()
         numFormat.maximumFractionDigits = 2
-        numFormat.currency = Currency.getInstance(currencySpinner2.selectedItem.toString())
-        return numFormat.format(convertedValue)
+
+        // American currency symbol setup
+        if(currencySpinner2.selectedItem.toString() == "USD") {
+            numFormat.currency = Currency.getInstance(Locale.US)
+            return numFormat.format(convertedValue)
+        }
+        
+        // Egyptian currency symbol setup
+        val result = numFormat.format(convertedValue)
+        return result.substring(1, result.length) + " LE"
+
     }
 
     private fun setupSpinners() {
