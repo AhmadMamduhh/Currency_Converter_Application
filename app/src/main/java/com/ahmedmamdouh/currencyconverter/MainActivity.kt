@@ -1,6 +1,7 @@
 package com.ahmedmamdouh.currencyconverter
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         // Setting up the currencies menus
         setupSpinners()
@@ -56,6 +58,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     private fun numToCurrencyFormat(convertedValue: Double): String {
         val numFormat: NumberFormat = NumberFormat.getCurrencyInstance()
         numFormat.maximumFractionDigits = 2
@@ -65,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             numFormat.currency = Currency.getInstance(Locale.US)
             return numFormat.format(convertedValue)
         }
-        
+
         // Egyptian currency symbol setup
         val result = numFormat.format(convertedValue)
         return result.substring(1, result.length) + " LE"
